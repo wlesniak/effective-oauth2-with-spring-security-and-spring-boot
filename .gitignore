@@ -5,6 +5,7 @@ target/**
 *.ear
 *.class
 .factory
+.factorypath
 # eclipse specific
 *.pydevproject
 .project
