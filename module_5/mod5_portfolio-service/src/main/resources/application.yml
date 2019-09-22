@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: portfolio-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/auth/realms/CryptoInc
+           
+server:
+   port: 8180
+
+logging:
+  level:
+    root: INFO
+    com.memorynotfound: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO

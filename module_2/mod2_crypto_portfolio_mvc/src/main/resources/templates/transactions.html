@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="fragments/head :: head"></head>
+<body>
+<header th:insert="fragments/header :: header"></header>
+	<div class="container">
+		<h3>Transactions</h3>
+		<form action="#" th:action="@{/portfolio/transactions}" th:method="delete">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th/>
+					<th>Symbol</th>
+					<th>Type</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="transaction : ${transactions}">
+					<td><input type="checkbox" th:value="${transaction.id}" th:field="*{selected.id}"/></td>
+					<td th:text="${transaction.symbol}">BTC</td>
+					<td th:text="${transaction.type}">BUY</td>
+					<td th:text="${#numbers.formatDecimal(transaction.quantity,0, 'DEFAULT', 8, 'DEFAULT')}">1.234</td>
+					<td th:text="${#numbers.formatCurrency(transaction.price)}">$10000.00</td>
+				</tr>
+			</tbody>
+		</table>
+		<button name="delTransactionBtn" type="submit">Remove Transactions</button>
+		</form>
+	</div>	
+</body>
+</html>

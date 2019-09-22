@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+	<nav class="navbar navbar-expand-sm  navbar-light crypt_nav" th:fragment="header">
+	  <div class="container-fluid" >
+    	<div class="navbar-header">
+    		<a class="navbar-brand" href="#">Spring - Crypto Portfolio</a>
+    	</div>
+		<ul class="nav navbar-nav">		
+			<li class="nav-item active">
+				<a class="nav-link" href="/portfolio">Home</a>
+			</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/portfolio/transactions">Transactions</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/support">Support</a>
+					</li>
+					<li class="nav-item"  sec:authorize="hasRole('ADMIN')">
+						<a class="nav-link" href="/support/admin">Admin</a>
+					</li>
+					<li class="nav-item">
+						<form th:action="@{/logout}" method="post">
+    						<button class="glyphicon glyphicon-log-out" type="submit">logout</button>
+						</form>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="nav-item">
+						User: <span sec:authentication="principal.firstAndLastName" class="pull-right">Bob</span>
+					</li>
+				</ul>
+					
+		</div>
+	</nav>
+</body>
+</html>

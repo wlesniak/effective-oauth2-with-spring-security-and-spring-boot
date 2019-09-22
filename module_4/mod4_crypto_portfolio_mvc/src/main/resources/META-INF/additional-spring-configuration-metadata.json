@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "disable-email-verification",
+  "type": "java.lang.String",
+  "description": "For Demo purposes to disable sending email verification on user registrations'"
+}]}

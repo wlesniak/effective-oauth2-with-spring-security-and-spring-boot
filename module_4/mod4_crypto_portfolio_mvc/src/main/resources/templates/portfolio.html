@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="fragments/head :: head">
+</head>
+<body>
+	<header th:insert="fragments/header :: header"></header>
+	<div class="container">
+		
+		<h3>Positions</h3>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Symbol</th>
+					<th>Total Coins</th>
+					<th>Value</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="position : ${positionsResponse.positions}"
+					th:onclick="'window.location.href = \'' + @{/portfolio/transactions/{symbol}(symbol=${position.cryptoCurrency.symbol})} + '\''">
+					<td th:text="${position.cryptoCurrency.symbol}">BTC</td>
+					<td th:text="${#numbers.formatDecimal(position.quantity,0, 'DEFAULT', 8, 'DEFAULT')}">1.234</td>
+					<td th:text="${#numbers.formatCurrency(position.value)}">$10000.00</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+	<div class="container add_trans_div" >
+		<form action="#" th:action="@{/portfolio/transactions}" th:object="${transaction}" th:method="post">
+			<fieldset>
+				<label>Symbol</label> 
+				<select th:field="*{cryptoSymbol}" required="required">
+					<option value="">----Select----</option>
+					<option th:each="entry : ${positionsResponse.cryptoCurrencies.entrySet()}" th:text="${entry.key}" th:value="${entry.key}">
+				</select> 
+				<label>Type</label> 
+				<select th:field="*{type}" required="required">
+					<option th:value="BUY">BUY</option>
+					<option th:value="SELL">SELL</option>
+				</select> 
+				<label>Quantity</label> 
+				<input type="number" th:field="*{quantity}" required="required">
+				<label>Price</label> 
+				<input type="number" th:field="*{price}" required="required">
+				<button name="addTransactionBtn" type="submit">Add Transaction</button>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>

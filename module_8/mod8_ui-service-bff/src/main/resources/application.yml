@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ui-service
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri:  http://localhost:8081/auth/realms/CryptoInc
+          
+server:
+   port: 8185

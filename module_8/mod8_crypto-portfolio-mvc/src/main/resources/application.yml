@@ -1,0 +1,29 @@
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          crypto-portfolio:
+            client-id: crypto-portfolio
+            client-secret: 28040d12-081f-48e0-8ba8-801003666428
+            client-name: Crypto Portfolio
+            scope: openid,profile,email,offline_access
+            redirect-uri: http://localhost:8080/login/oauth2/code/crypto-portfolio
+            provider: crypto-provider           
+        provider:
+          crypto-provider:
+            issuer-uri: http://localhost:8081/auth/realms/CryptoInc
+            #token-uri: http://localhost:8081/auth/realms/CryptoInc/protocol/openid-connect/token
+            #authorization-uri: http://localhost:8081/auth/realms/CryptoInc/protocol/openid-connect/auth
+            #user-info-uri: http://localhost:8081/auth/realms/CryptoInc/protocol/openid-connect/userinfo
+            #user-name-attribute: sub
+            #jwk-set-uri: http://localhost:8081/auth/realms/CryptoInc/protocol/openid-connect/certs
+            
+  
+logging:
+  level:
+    root: INFO
+    com.memorynotfound: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO

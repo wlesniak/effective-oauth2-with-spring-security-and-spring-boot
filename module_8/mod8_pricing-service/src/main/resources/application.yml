@@ -1,0 +1,10 @@
+server:
+  port: 8184
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/auth/realms/CryptoInc
+  

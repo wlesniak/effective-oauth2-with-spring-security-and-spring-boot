@@ -1,0 +1,31 @@
+.crypt_nav {
+	background-color: #9fbf40;
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #c6d98c;
+}
+
+.add_trans_div {
+	border: thin;
+	background-color: #c6d98c;
+}
+
+.signup_btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.signup_btn:hover {
+    opacity:1;
+}
+
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          facebook:
+            client-id: 329893387589100
+            client-secret: c8433775f2d257f7dea093957368c7cf
+            scope: public_profile email user_location
+          google:
+            client-id: 566746547955-p61061irrafjgv1mh0lh77t0ss72tg1i.apps.googleusercontent.com
+            client-secret: TIaTzstyZl8KZ6h35tiAVuHm
+          crypto-portfolio:
+            client-id: crypto-portfolio
+            client-secret: secret
+            client-name: Crypto Portfolio
+            scope: user_info
+            redirect-uri: http://localhost:8080/login/oauth2/code/crypto-portfolio
+            client-authentication-method: basic
+            authorization-grant-type: authorization_code
+            provider: crypto-provider
+        provider:
+            crypto-provider:
+              token-uri: http://localhost:8081/auth/oauth/token
+              authorization-uri: http://localhost:8081/auth/oauth/authorize
+              user-info-uri: http://localhost:8081/auth/userinfo
+              user-name-attribute: username
+logging:
+  level:
+    root: INFO
+    com.memorynotfound: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO

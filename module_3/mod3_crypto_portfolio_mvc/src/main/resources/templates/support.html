@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="fragments/head :: head">
+</head>
+<body>
+	<header th:insert="fragments/header :: header"></header>
+	<div class="container">
+		<h3>Support Queries</h3>
+		<a th:href="@{/support/compose}">Add New</a>
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Subject</th>
+					<th>User</th>
+					<th>Resolved</th>
+					<th>Created</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="query : ${queries}" th:onclick="'window.location.href = \'' + @{/support/query/{id}(id=${query.id})} + '\''">
+					<td th:text="${query.subject}">Unable to remove transaction</td>
+					<td th:text="${query.username}">bob</td>
+					<td th:text="${query.resolved}">false</td>
+					<td th:text="${#calendars.format(query.creationTime)}">May 15, 2018 23:00</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+</body>
+</html>
