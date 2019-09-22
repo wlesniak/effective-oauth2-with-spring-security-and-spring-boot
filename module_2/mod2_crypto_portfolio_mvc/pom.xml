@@ -3,12 +3,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.pluralsight.security</groupId>
+    <groupId>com.pluralsight.security.mod2</groupId>
     <artifactId>module_2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>crypto_portfolio_mvc</artifactId>
-  <name>crypto_portfolio_mvc</name>
+  <artifactId>mod2_crypto_portfolio_mvc</artifactId>
+  <name>mod2_crypto_portfolio_mvc</name>
   <packaging>jar</packaging>
   <url>http://maven.apache.org</url>
   <properties>
