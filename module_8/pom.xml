@@ -17,11 +17,11 @@
   <dependencies>
   </dependencies>
   <modules>
-  	<module>portfolio-service</module>
-    <module>support-service</module>
-    <module>pricing-service</module>
-    <module>crypto-portfolio-mvc</module>
-    <module>ui-service-bff</module>
-    <module>crypto-portfolio-react</module>
+  	<module>mod8_portfolio-service</module>
+    <module>mod8_support-service</module>
+    <module>mod8_pricing-service</module>
+    <module>mod8_crypto-portfolio-mvc</module>
+    <module>mod8_ui-service-bff</module>
+    <module>mod8_crypto-portfolio-react</module>
   </modules>
 </project>

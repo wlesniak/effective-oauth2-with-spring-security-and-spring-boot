@@ -7,7 +7,7 @@
     <artifactId>effective-oauth2-with-spring-security-and-spring-boot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.pluralsight.security.mod8</groupId>
+  <groupId>com.pluralsight.security.mod2</groupId>
   <artifactId>module_2</artifactId>
   <name>module_2</name>
   <packaging>pom</packaging>
@@ -18,6 +18,6 @@
   <dependencies>
   </dependencies>
   <modules>
-  	<module>crypto_portfolio_mvc</module>
+  	<module>mod2_crypto_portfolio_mvc</module>
   </modules>
 </project>

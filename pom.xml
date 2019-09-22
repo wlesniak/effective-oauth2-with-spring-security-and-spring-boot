@@ -27,10 +27,10 @@
 		</dependency>
 	</dependencies>
 	<modules>
-		<module>module_8</module>
     <module>module_2</module>
     <module>module_3</module>
     <module>module_4</module>
     <module>module_5</module>
+    <module>module_8</module>
   </modules>
 </project>
